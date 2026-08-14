@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>반응속도 측정</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="screen" data-state="idle">
+    <p id="message">버튼을 눌러 시작하세요</p>
+
+    <button id="startBtn" type="button">시작</button>
+
+    <div id="failPanel" class="panel" hidden>
+      <h2>실패!</h2>
+      <p>빨간색이 되기 전에 클릭했어요.</p>
+      <button id="restartFromFailBtn" type="button" class="restart-btn">다시 시작</button>
+    </div>
+
+    <div id="resultPanel" class="panel" hidden>
+      <h2>결과</h2>
+      <p id="msValue">0 ms</p>
+
+      <form id="nicknameForm">
+        <label for="nicknameInput">닉네임</label>
+        <input id="nicknameInput" type="text" maxlength="20" placeholder="닉네임을 입력하세요" required />
+        <button type="submit">기록 저장</button>
+      </form>
+      <p id="saveStatus"></p>
+
+      <h3>최고 기록 랭킹</h3>
+      <ol id="leaderboardList"></ol>
+
+      <button id="restartFromResultBtn" type="button" class="restart-btn">다시 시작</button>
+    </div>
+  </div>
+
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
