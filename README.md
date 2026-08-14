@@ -69,11 +69,11 @@ python3 -m http.server 8080
 
 1. 저장소 Settings > Pages > Source를 "GitHub Actions"로 설정합니다.
 2. 저장소 Settings > Environments > `github-pages` > Deployment branches and tags 에서 `main`이 배포 가능하도록 허용합니다("No restriction" 또는 `main` 추가).
-3. 저장소 Settings > Secrets and variables > Actions 에 아래 이름으로 Firebase config 값을 등록합니다.
-   - `FIREBASE_API_KEY`
-   - `FIREBASE_AUTH_DOMAIN`
-   - `FIREBASE_PROJECT_ID`
-   - `FIREBASE_STORAGE_BUCKET`
-   - `FIREBASE_MESSAGING_SENDER_ID`
-   - `FIREBASE_APP_ID`
+3. 저장소 Settings > Secrets and variables > Actions > Repository secrets 에 아래 이름으로 Firebase config 값을 등록합니다.
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGEBUCKET`
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
 4. `main`에 푸시되면 워크플로우가 이 Secrets 값으로 `frontend/js/firebase-config.js`를 생성한 뒤 배포합니다. 저장소에 커밋된 `firebase-config.js`는 항상 플레이스홀더 상태로 유지되고, 실제 값은 빌드 아티팩트에만 존재합니다.
